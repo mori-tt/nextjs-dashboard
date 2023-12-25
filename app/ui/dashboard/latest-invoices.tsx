@@ -5,11 +5,6 @@ import { lusitana } from '@/app/ui/fonts';
 import { LatestInvoice } from '@/app/lib/definitions';
 import { fetchLatestInvoices } from '@/app/lib/data';
 
-// export default async function LatestInvoices({
-//   latestInvoices,
-// }: {
-//   latestInvoices: LatestInvoice[];
-// }) {
 export default async function LatestInvoices() {
   // Remove props
   const latestInvoices = await fetchLatestInvoices();
