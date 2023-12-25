@@ -3,9 +3,8 @@ import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Acme Dashboard',
-  description: '',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  title: 'Collection management app.',
+  description: 'このアプリは通常のルーティンの集金業務から支払いが遅れている、滞納者向けの集金管理アプリに使うのに適してます',
 };
 
 export default function RootLayout({

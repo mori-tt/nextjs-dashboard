@@ -2,6 +2,7 @@ import Link from 'next/link';
 import NavLinks from '@/app/ui/dashboard/nav-links';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import { signOut } from '@/auth';
+import { lusitana } from '@/app/ui/fonts';
 
 export default function SideNav() {
   return (
@@ -11,7 +12,7 @@ export default function SideNav() {
         href="/"
       >
         <div className="w-32 text-white md:w-40">
-          <h1 className="">Collection management app.</h1>
+          <h1 className={`${lusitana.className} mb-3 text-2xl`}>Collection management app.</h1>
         </div>
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
