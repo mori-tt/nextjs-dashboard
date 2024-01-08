@@ -10,6 +10,9 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
+import { signIn } from 'next-auth/react';
+import GithubLoginButton from './GithubLoginButton';
+
 
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -60,8 +63,11 @@ export default function LoginForm() {
               <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
           </div>
+          
+         
         </div>
         <LoginButton />
+        
         <div
           className="flex h-8 items-end space-x-1"
           aria-live="polite"
@@ -74,9 +80,14 @@ export default function LoginForm() {
             </>
           )}
         </div>
+        <div>
+           <GithubLoginButton />
+        </div>
+
       </div>
     </form>
   );
+
 }
 
 function LoginButton() {
