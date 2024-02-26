@@ -5,7 +5,6 @@ import { sql } from '@vercel/postgres';
 import { z } from 'zod';
 import type { User } from '@/app/lib/definitions';
 import { authConfig } from './auth.config';
-import GithubProvider from 'next-auth/providers/github';
 
 async function getUser(email: string): Promise<User | undefined> {
   try {
@@ -40,10 +39,6 @@ export const { auth, signIn, signOut } = NextAuth({
         console.log('Invalid credentials');
         return null;
       },
-    }),
-    GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
 });

@@ -23,6 +23,5 @@ export const authConfig = {
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
-    // 他のプロバイダーもここに追加できます
   ],
 } satisfies NextAuthConfig;
