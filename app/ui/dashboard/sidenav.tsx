@@ -12,7 +12,9 @@ export default function SideNav() {
         href="/"
       >
         <div className="w-32 text-white md:w-40">
-          <h1 className={`${lusitana.className} mb-3 text-2xl`}>Collection management app.</h1>
+          <h1 className={`${lusitana.className} mb-3 text-2xl`}>
+            Collection management app.
+          </h1>
         </div>
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">

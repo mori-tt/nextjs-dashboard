@@ -1,4 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
+import GithubProvider from 'next-auth/providers/github';
 
 export const authConfig = {
   pages: {
@@ -18,5 +19,10 @@ export const authConfig = {
     },
   },
   providers: [
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    }),
+    // 他のプロバイダーもここに追加できます
   ],
 } satisfies NextAuthConfig;
