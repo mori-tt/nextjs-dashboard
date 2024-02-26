@@ -14,6 +14,11 @@ import { signIn } from 'next-auth/react';
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
+  // GitHubでログインする関数
+  const handleGitHubLogin = async () => {
+    await signIn('github', { callbackUrl: '/dashboard' });
+  };
+
   return (
     <form action={dispatch} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
@@ -63,6 +68,17 @@ export default function LoginForm() {
         </div>
         <LoginButton />
 
+        {/* GitHubログインボタン */}
+        <div className="mt-6">
+          <button
+            type="button"
+            onClick={handleGitHubLogin}
+            className="inline-flex w-full justify-center rounded-md border border-transparent bg-gray-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          >
+            Sign in with GitHub
+          </button>
+        </div>
+
         <div
           className="flex h-8 items-end space-x-1"
           aria-live="polite"
@@ -75,9 +91,6 @@ export default function LoginForm() {
             </>
           )}
         </div>
-        <div>
-          <GithubLoginButton />
-        </div>
       </div>
     </form>
   );
@@ -89,17 +102,6 @@ function LoginButton() {
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>
       Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    </Button>
-  );
-}
-
-function GithubLoginButton() {
-  return (
-    <Button
-      onClick={() => signIn('github')}
-      className="rounded bg-gray-400 p-2 hover:bg-gray-500"
-    >
-      GitHub Log in
     </Button>
   );
 }
