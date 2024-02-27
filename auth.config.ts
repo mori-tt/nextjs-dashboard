@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
-import GithubProvider from 'next-auth/providers/github';
+import GitHubProvider from 'next-auth/providers/github'; // GitHubProviderをインポート
 
 export const authConfig = {
   pages: {
@@ -18,8 +18,10 @@ export const authConfig = {
       return true;
     },
   },
+  secret: process.env.AUTH_SECRET,
   providers: [
-    GithubProvider({
+    // GitHubプロバイダーを追加
+    GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),

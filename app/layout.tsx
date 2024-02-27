@@ -15,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <NextAuthProvider>
-      <html lang="en">
-        <body className={`${inter.className} antialiased`}>{children}</body>
-      </html>
-    </NextAuthProvider>
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
+        <NextAuthProvider>{children}</NextAuthProvider>
+      </body>
+    </html>
   );
 }
