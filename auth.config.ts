@@ -20,7 +20,6 @@ export const authConfig = {
   },
   secret: process.env.AUTH_SECRET,
   providers: [
-    // GitHubプロバイダーを追加
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
