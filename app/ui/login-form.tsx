@@ -14,11 +14,9 @@ import { signIn } from 'next-auth/react';
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
-  // GitHubでログインする関数
   const handleGitHubLogin = async () => {
     await signIn('github', { callbackUrl: '/dashboard' });
   };
-
   return (
     <form action={dispatch} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">

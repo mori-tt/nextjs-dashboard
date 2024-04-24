@@ -138,3 +138,23 @@ export async function authenticate(
     throw error;
   }
 }
+
+export async function authenticateGithub(
+  prevState: string | undefined,
+  formData: FormData,
+) {
+  try {
+    // GitHubログインの場合、第一引数に'github'を指定します。
+    await signIn('github', formData);
+  } catch (error) {
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case 'CredentialsSignin':
+          return 'Invalid credentials.';
+        default:
+          return 'Something went wrong.';
+      }
+    }
+    throw error;
+  }
+}
