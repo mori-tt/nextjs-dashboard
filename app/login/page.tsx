@@ -1,6 +1,6 @@
 import LoginForm from '@/app/ui/login-form';
 import { lusitana } from '@/app/ui/fonts';
- 
+
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center md:h-screen">
@@ -8,12 +8,12 @@ export default function LoginPage() {
         <div className="flex h-20 w-full items-end rounded-lg bg-gray-400 p-3 md:h-36">
           <div className="w-32 text-white md:w-36">
             <p className={`${lusitana.className} mb-3 text-2xl`}>
-            Collection management app.</p>
+              Collection management app.
+            </p>
           </div>
         </div>
         <LoginForm />
       </div>
-      
     </main>
   );
 }
